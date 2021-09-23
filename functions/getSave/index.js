@@ -12,14 +12,3 @@ const functions = {
   Join: faunadb.query.Join,
   Call: faunadb.query.Call,
 } = faunadb.query;
-
-export const getSave = async (client, saveName) => {
-  try {
-    return await client.query(
-      functions.Get(functions.Match(functions.Index('saves_by_name'), [saveName]))
-    )
-  } catch (e) {
-    console.log(e)
-    return {};
-  }
-}
