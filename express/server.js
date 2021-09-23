@@ -22,7 +22,9 @@ const functions = {
 const router = express.Router();
 
 app.get("/", async (req, res) => {
-  res.send("hello, world!")
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+  res.write('<h1>Hello from Express.js!</h1>');
+  res.end();
 });
 
 app.put("/save", async (req, res) => {
