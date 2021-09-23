@@ -4,7 +4,8 @@ const path = require('path');
 const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
-import faunadb from "faunadb"
+const faunadb = require("faunadb")
+
 const functions = {
   Ref: faunadb.query.Ref,
   Paginate: faunadb.query.Paginate,
